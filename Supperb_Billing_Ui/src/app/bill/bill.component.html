@@ -1,0 +1,142 @@
+<p>
+  bill works!
+</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="row">
+
+  <div class="container">
+    <br>
+
+    <div class="row">
+      <aside class="col-sm-3 border">
+        <p>select customer</p>
+
+        <form>
+          <div class="form-group form-inline">
+            <div class="input-group">
+              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"
+                name="customerMobileNo" [(ngModel)]="cust.customerMobileNo" mdbInput>
+              <i class="fas fa-search" aria-hidden="true" (click)="getCustomer(cust)"></i>
+            </div>
+          </div>
+        </form>
+
+        <div class="form-group">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="openDialog()">Select Customer</button>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary btn-block" (click)="register()"> Register  </button> -->
+        </div>
+
+        <div class="col-md-12 border" style="padding: 5px">
+
+        </div>
+
+        <div class="col-md-12 border" style="padding: 5px">
+          Discount :
+          <br>
+          Tax : <br>
+          Total Amount :
+        </div>
+      </aside>
+
+      <aside class="col-sm-6 border">
+        <p>search product</p>
+        <form>
+          <div class="form-group form-inline">
+            <div class="input-group">
+              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"
+                name="productCode" [(ngModel)]="product.productCode" mdbInput>
+              <i class="fas fa-search" aria-hidden="true" (click)="getProduct(product)"></i>
+            </div>
+          </div>
+        </form>
+        <div class="container">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>Product Id</th>
+                <th>Product code</th>
+                <th>Product name</th>
+                <th>HSN code</th>
+                
+              </tr>
+              <tr *ngFor="let pd of productsdata" (click)="addProductCart(this.pd)">
+                <td>{{pd.productid}}</td>
+                <td>{{pd.productcode}}</td>
+                <td>{{pd.productname}}</td>
+                <td>{{pd.producthsncode}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div *ngFor="let pro of productsdata">
+          <div class="border proDesign">
+            {{pro.productname}}
+          </div>
+        </div> -->
+
+
+
+      </aside>
+
+      <aside class="col-sm-3 border">
+        <p>select category</p>
+
+        <form>
+          <div class="form-group form-inline">
+            <div class="input-group">
+              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"
+                name="productCode" [(ngModel)]="productCat.productcategoryName" mdbInput>
+              <i class="fas fa-search" aria-hidden="true"
+                (click)="getProductCategory(productCat.productcategoryName)"></i>
+            </div>
+          </div>
+        </form>
+        <div class="card" style="align-items: center">
+        </div>
+        <div class="container">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>Category Id</th>
+
+                <th>Category name</th>
+
+              </tr>
+              <tr *ngFor="let data of productcategoriesdata">
+                <td>{{data.productcategoryid}}</td>
+
+                <td>{{data.productcategoryname}}</td>
+
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </aside>
+    </div>
+
+    <div class="row">
+      <aside class="col-sm-12 border" style="margin: 10px 0 10px 0">
+
+        <button mat-raised-button style="margin: 5px"> <i class="fas fa-reply"></i> Return</button>
+
+        <button mat-raised-button color="primary" style="margin: 5px 10px"><i class="fas fa-undo-alt"></i>
+          Reset</button>
+
+        <button mat-raised-button color="primary" style="margin: 5px 10px "> <i class="fa fa-percent"
+            aria-hidden="true"></i> Tax and Discount</button>
+
+        <button mat-raised-button color="primary" style="margin: 5px">Dashboard</button>
+      </aside>
+    </div>
+  </div>
+</div>

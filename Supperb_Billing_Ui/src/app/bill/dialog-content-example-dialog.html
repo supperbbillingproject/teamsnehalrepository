@@ -1,0 +1,111 @@
+
+<h2 mat-dialog-title>Select Customer</h2>
+<mat-dialog-content class="mat-typography">
+<form class=" md-form form-sm">
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" name="customerMobileNo" [(ngModel)]="cust.customerMobileNo" mdbInput>
+            <i class="fas fa-search" aria-hidden="true" (click)="getCustomer(cust)"></i>
+        </div>
+    </div>
+    
+
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-half-width">
+                <input matInput placeholder="Name" name="customername" [(ngModel)]="customerdata.customername">
+            </mat-form-field>
+        
+            <mat-form-field class="example-half-width">
+                <input matInput placeholder="Customer Type" name="customertype" [(ngModel)]="customerdata.customertype">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Mobile" name="customermobile" [(ngModel)]="customerdata.customermobile">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" name="email" [(ngModel)]="customerdata.email">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Pan number" name="" [(ngModel)]="customerdata.customerPanCardNo">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="GSTIN number" name="gstin" [(ngModel)]="customerdata.gstin">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="door number" name="doorno" [(ngModel)]="customerdata.doorno">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Streetname" name="streetno" [(ngModel)]="customerdata.streetno">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Lane name" name="laneno" [(ngModel)]="customerdata.laneno">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Area" name="area" [(ngModel)]="customerdata.area">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="City" name="city" [(ngModel)]="customerdata.city">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="State" name="state" [(ngModel)]="customerdata.state">
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="form-group form-inline">
+        <div class="input-group">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Country" name="country" [(ngModel)]="customerdata.country">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Zipcode" name="zipcode" [(ngModel)]="customerdata.zipcode">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>
+
+<style>
+.mat-form-field-appearance-legacy .mat-form-field-wrapper{
+    margin: 10px;
+}
+</style>

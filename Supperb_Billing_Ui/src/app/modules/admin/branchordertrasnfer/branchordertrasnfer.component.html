@@ -1,0 +1,99 @@
+<div class="myDiv">
+  <h3 style="font-family: Arial, Helvetica, sans-serif;">Branch Order Transfer</h3>
+</div>
+
+<div class="row">
+  <mat-toolbar>
+    <div class="col-md-2" style="margin-right: 50px"> 
+   
+      <mat-form-field>
+        <mat-label>State</mat-label>
+          <mat-select>
+            
+              <mat-option *ngFor="let state of getallState" [value]="state" (onSelectionChange)="getDist(state.stateId)"(onSelectionChange)="getbranchByState(state.stateId)">{{state.stateName}}</mat-option>
+          </mat-select>
+    </mat-form-field>
+    
+   
+    </div>
+  
+    <div class="col-md-2" style="margin-right: 50px"> 
+      <mat-form-field>
+        <mat-label>District</mat-label>
+          <mat-select>
+            
+              <mat-option *ngFor="let district of getdist" [value]="district">{{district.districtName}}</mat-option>
+          </mat-select>
+    </mat-form-field>   
+    </div>
+  
+   
+</mat-toolbar>
+</div>
+
+
+<div class="row" >
+  
+      <mat-toolbar>
+          
+       
+      
+    <div class="col-md-2" style="margin-right: 50px"> 
+      <mat-form-field>
+        <mat-label>Select Product</mat-label>
+          <mat-select>
+            
+              <mat-option *ngFor="let Product of getproduct" [value]="Product" (onSelectionChange)="getBranchByProductName(Product.productName)">{{Product.productName}}</mat-option>
+          </mat-select>
+    </mat-form-field>
+    </div>
+    
+    <mat-form-field>
+      <mat-label>From Branch</mat-label>
+        <mat-select>
+          
+            <mat-option *ngFor="let Branch of getBranchName" [value]="Branch" (onSelectionChange)="getCurrentStock(Branch.branchInformation.branchName)" >{{Branch.branchInformation.branchName}}</mat-option>
+        </mat-select>
+  </mat-form-field>
+  
+
+
+    <div class="col-md-2"> 
+      <mat-form-field>
+        <input matInput placeholder="Current Stock" [(ngModel)]="currentStock">
+      </mat-form-field>      
+    </div>
+      
+        <div class="col-md-2 ">
+          <mat-form-field>
+            <mat-label>To Branch</mat-label>
+              <mat-select>
+                
+                 <mat-option *ngFor="let Branch of branchInfo" [value]="Branch" >{{Branch.branchName}}</mat-option> 
+              </mat-select>
+        </mat-form-field>
+        
+          </div>
+
+          <div class="col-md-2"> 
+              <mat-form-field>
+                <input matInput placeholder="Transfer Stock">
+              </mat-form-field>      
+            </div>
+            
+        </mat-toolbar>
+    </div> 
+    <div class="row"  >
+        <mat-toolbar>
+  
+              <div class="col-md-2" style="margin-left: 300px"> 
+            <button class="btn btn-primary" mat-button>Transfer</button>
+                </div>
+               
+
+        
+        </mat-toolbar>
+
+
+
+    </div>
