@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <aside class="col-sm-12 ">
+        <div class="card">
+
+          <article class="card-body">
+            <h2 class="card-title text-center mb-12 mt-1 ">Add Supplier</h2>
+            <hr>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="form-group col-md-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text "> <i class="fa fa-user-o" aria-hidden="true"></i> </span>
+                    </div>
+                    <!-- <input name="productName" class="form-control" placeholder="Enter Supplier Name" type="text"
+                        name="productName"> -->
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Name" name="suppliername" [(ngModel)]="sup.suppliername">
+                    </mat-form-field>
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"> <i class="fa fa-building-o" aria-hidden="true"></i> </span>
+                    </div>
+                    <!--  <input name="productCode" class="form-control" placeholder="Enter Supplier Company Name " type="text"
+                        name="productCode"> -->
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="CompanyName" name="suppliercompanyname"
+                        [(ngModel)]="sup.suppliercompanyname">
+                    </mat-form-field>
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"> <i class="fa fa-address-card-o" aria-hidden="true"></i> </span>
+                    </div>
+                    <!--  <input name="productHSNCode" class="form-control" placeholder="Enter Supplier Address" type="text" name="productHSNCode"> -->
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="SupplierAddress" name="supplieraddress"
+                        [(ngModel)]="sup.supplieraddress">
+                    </mat-form-field>
+                  </div>
+                  <br>
+
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-address-card-o" aria-hidden="true"></i> </span>
+                    </div>
+                    <!--   <input name="country" class="form-control" placeholder="Enter Supplier Country" type="text" name="Brand">-->
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Country</mat-label>
+                      <mat-select [(value)]="cntryid" (selectionChange)="getStates()">
+                        <mat-option *ngFor="let c of countrydata" name="country" [value]="c.countryid">
+                          {{c.countryname}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <br>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"> <i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                    </div>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>State</mat-label>
+                      <mat-select [(value)]="stid" (selectionChange)="getDistrics()">
+                        <mat-option *ngFor="let state of statedata" name="state" [value]="state.stateid">
+                          {{state.statename}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <br>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                    </div>
+                    <!-- <input name="district" class="form-control" placeholder="Enter Supplier District" type="text" name="Brand"> -->
+                    <mat-form-field class="example-full-width">
+                      <mat-label>District</mat-label>
+                      <mat-select [(value)]="districid">
+                        <mat-option *ngFor="let dist of districtdata" name="district" [value]="dist.districtid">
+                          {{dist.districtname}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <br>
+
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-address-card-o" aria-hidden="true"></i> </span>
+                    </div>
+                    <!--   <input name="country" class="form-control" placeholder="Enter Supplier Country" type="text" name="Brand">-->
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="GSTIN" name="gstin" [(ngModel)]="sup.gstin">
+                    </mat-form-field>
+                  </div>
+
+
+
+                  <br>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i> </span>
+                    </div>                    
+                    <mat-form-field class="example-full-width">
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="dob"
+                        [(ngModel)]="sup.date">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <br><br>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="form-group col-md-2"></div>
+                <button class="btn btn-success btn-lg col-md-3" (click)="addSupplier(sup)">Submit</button>
+                <div class="form-group col-md-2"></div>
+                <button class="btn btn-warning btn-lg col-md-3" (click)="resetData(sup)">reset</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </div>
