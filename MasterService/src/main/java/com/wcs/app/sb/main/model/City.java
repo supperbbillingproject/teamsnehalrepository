@@ -9,6 +9,9 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class City {
+	public City() {
+		// TODO Auto-generated constructor stub
+	}
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 	private int cityid;

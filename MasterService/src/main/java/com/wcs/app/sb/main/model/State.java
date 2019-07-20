@@ -9,6 +9,11 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class State {
+
+	public State() {
+		// TODO Auto-generated constructor stub
+	}
+
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 	private int stateid;

@@ -15,8 +15,7 @@ public class Product {
 	private int productid;
 	private String productname;
 	private String productcode;
-	private String producthsncode;
-	
+	private String producthsncode;	
 	private String producttype;
 	@OneToOne(cascade=CascadeType.ALL)
 	private ProductCategory productcategory;

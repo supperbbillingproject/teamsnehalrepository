@@ -7,4 +7,6 @@ import com.wcs.app.sb.main.model.Supplier;
 
 public interface ISupplierRepository extends PagingAndSortingRepository<Supplier, Integer>{
 
+	Supplier save(Supplier s);
+
 }

@@ -1,0 +1,12 @@
+<div class="container" ng-app="invoice">
+  <section class="jumbotron">
+    <h1>Ledger</h1>
+  </section>
+  <mat-form-field class="example-form-field">
+    <input matInput type="text" placeholder="Ledger Name" [(ngModel)]="ledger.ledgername">
+
+  </mat-form-field>
+  <button type="button" class="btn btn-danger" (click)="addLedger(ledger)">Save</button>
+  <!-- <button type="button" class="btn btn-danger" ng-click="remove($index)">Cancle</button> -->
+  </div>
+

@@ -2,12 +2,14 @@ package com.wcs.app.sb.main.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
-
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
 	private int customerid;
 	private String customertype;

@@ -7,7 +7,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Country {
-	
+
+	public Country() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int countryid;
