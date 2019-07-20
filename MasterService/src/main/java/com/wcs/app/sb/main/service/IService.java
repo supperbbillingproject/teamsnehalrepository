@@ -13,12 +13,14 @@ import com.wcs.app.sb.main.model.ProductPriceMapping;
 import com.wcs.app.sb.main.model.State;
 import com.wcs.app.sb.main.model.Supplier;
 
+
 public interface IService {
 	public Ledger addLedger(Ledger l);
 	public List<Ledger> getLedger();
 	public Product getProduct(String productcode);
 	public List<ProductCategory> getProductCategory(String productcategoryname);
 	public Customer getCustomer(long customermobile);
+
 	public List<ProductPriceMaappingDto> getAllProducts();
 	public List<ProductCategory> getAllProductCategories();
 	public Supplier save(Supplier s);
@@ -29,5 +31,6 @@ public interface IService {
 	public ProductPriceMaappingDto getdata(String productcode);
 	
 	public void savedata(ProductPriceMapping p);
+
 	
 }

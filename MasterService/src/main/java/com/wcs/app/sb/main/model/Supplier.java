@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,11 +17,13 @@ public class Supplier {
 	public Supplier() {
 		// TODO Auto-generated constructor stub
 	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int supplierid;
 	private String suppliername;
 	private String supplieraddress;
+
 	@OneToOne(cascade=CascadeType.MERGE)
 	private District district;
 	@OneToOne(cascade=CascadeType.MERGE)
@@ -38,6 +41,7 @@ public class Supplier {
 	public void setSuppliercompanyname(String suppliercompanyname) {
 		this.suppliercompanyname = suppliercompanyname;
 	}
+
 	public int getSupplierid() {
 		return supplierid;
 	}
@@ -80,11 +84,13 @@ public class Supplier {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
+
 	public Date getDate() {
 		return date;
 	}
 	public void setDate(Date date) {
 		this.date = date;
 	}	
+
 	
 }

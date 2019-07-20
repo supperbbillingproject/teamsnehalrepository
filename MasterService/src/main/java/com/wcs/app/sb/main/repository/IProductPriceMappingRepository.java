@@ -1,7 +1,6 @@
 package com.wcs.app.sb.main.repository;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
@@ -16,4 +15,5 @@ public interface IProductPriceMappingRepository extends PagingAndSortingReposito
 
 	@Query("select new com.wcs.app.sb.main.dto.ProductPriceMaappingDto(p.productname, p.producthsncode,p.producttype,p.productcode, pc.productcategoryname, ppm.sellingprice, ppm.taxgroup, s.suppliername)"+ "from ProductPriceMapping ppm left join ppm.product p left join p.productcategory pc left join ppm.supplier s ")
 	public List<ProductPriceMaappingDto> getAllProducts();
+
 }

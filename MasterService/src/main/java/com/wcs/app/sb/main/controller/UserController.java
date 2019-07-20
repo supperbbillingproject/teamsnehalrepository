@@ -2,7 +2,6 @@ package com.wcs.app.sb.main.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,16 +53,18 @@ public class UserController {
 		return li;
 		
 	}
-	
+
 	/*@RequestMapping(value="/getProduct/{productcode}", method=RequestMethod.GET, produces="application/json")
+
 	public Product getProduct(@PathVariable String productcode)
 	{
 		System.out.println("in master controller");
 		Product p = is.getProduct(productcode);
 		System.out.println(p);
 		return p;
-		
+
 	}*/
+
 	
 	@RequestMapping(value="/getProductCategory/{productcategoryname}", method=RequestMethod.GET, produces="application/json")
 	public List<ProductCategory> getCategory(@PathVariable String productcategoryname)
@@ -85,6 +85,7 @@ public class UserController {
 		return customer;
 		
 	}
+
 	
 	@RequestMapping(value="/getAllProducts", method=RequestMethod.GET, produces="application/json")
 	public List<ProductPriceMaappingDto> getAllProducts()
@@ -157,17 +158,5 @@ public class UserController {
 		}
 	 
 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+
 }

@@ -3,7 +3,6 @@ package com.wcs.app.sb.main.model;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,6 +30,12 @@ public class Invoice {
 	private float discount;
 	@OneToMany(cascade= CascadeType.ALL)
 	private Map<String, InvoiceProductUnitPrice> pmap = new HashMap<>();
+	private String date;
+	@OneToMany(cascade=CascadeType.ALL)
+	private Map<String, Invoicequantity> map = new HashMap<>();
+	@OneToMany(cascade=CascadeType.ALL)
+	private Map<String, Discount> dmap = new HashMap<>();
+
 	private float totalamount;
 	private float totaldiscountamount;
 	private float payableamount;
@@ -38,6 +43,7 @@ public class Invoice {
 	private float totaltaxamount;
 	private float servicecharges;
 	private float deliverycharges;
+
 	public int getId() {
 		return id;
 	}
@@ -123,7 +129,6 @@ public class Invoice {
 	}
 	public void setDeliverycharges(float deliverycharges) {
 		this.deliverycharges = deliverycharges;
-	}
-	
-	
+	}	
+
 }

@@ -9,9 +9,11 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class District {
+
 	public District() {
 		// TODO Auto-generated constructor stub
 	}
+
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
     private int districtid;

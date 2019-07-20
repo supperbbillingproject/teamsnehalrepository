@@ -34,6 +34,7 @@ public class Serviceimpl implements IService{
 	@Autowired
 	IProductCategoryRepository ipcr;
 	@Autowired
+
 	ICustomerRepository icr;	
 	@Autowired
 	ICountryRepository icnr;	

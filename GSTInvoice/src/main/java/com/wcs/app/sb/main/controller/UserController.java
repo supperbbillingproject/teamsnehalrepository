@@ -1,8 +1,8 @@
 package com.wcs.app.sb.main.controller;
 
+
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import com.wcs.app.sb.main.dto.InvoiceDTO;
 import com.wcs.app.sb.main.dto.InvoiceDetails;
 import com.wcs.app.sb.main.dto.ProductDTO;
@@ -25,6 +24,10 @@ import com.wcs.app.sb.main.model.Product;
 import com.wcs.app.sb.main.model.ProductCategory;
 import com.wcs.app.sb.main.service.serviceInterface;
 import com.wcs.app.sb.main.utility.InvoiceNoAutoGenerator;
+import com.wcs.app.sb.main.model.Customer;
+import com.wcs.app.sb.main.model.Product;
+import com.wcs.app.sb.main.model.ProductCategory;
+
 @CrossOrigin("*")
 @RestController
 public class UserController {
@@ -49,9 +52,8 @@ public class UserController {
 		String url="http://localhost:8081/getProduct/getProduct/"+productcode;
 		RestTemplate rstemp1=new RestTemplate();
 		ProductPriceMaappingDto p = rstemp1.getForObject(url, ProductPriceMaappingDto.class);
-		System.out.println(p);
-		return p;
-		
+		//System.out.println(p);
+		return p;		
 	}
 	
 	//to get product category by category name
@@ -81,6 +83,7 @@ public class UserController {
 		
 	}
 	
+
 	//to get all products in a list
 	@RequestMapping(value="/product", method=RequestMethod.GET, produces="application/json")
 	public List<ProductPriceMaappingDto> getAllProducts()
@@ -160,5 +163,6 @@ public class UserController {
 		return i1;
 		
 	}
+
 	
 }
